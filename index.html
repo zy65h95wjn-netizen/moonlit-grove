@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17152c">
+  <meta name="description" content="Your own little corner of magic. A peaceful, personalizable woodland clubhouse.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Moonlit Grove">
+  <link rel="apple-touch-icon" href="./assets/icon-180.png">
+  <link rel="icon" href="./assets/icon-192.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./src/styles.css">
+  <title>Moonlit Grove — My Clubhouse</title>
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+<div class="ambient-haze" aria-hidden="true"></div>
+<div class="app-shell" id="app">
+  <header class="topbar">
+    <div class="wordmark"><span class="brand-crescent" aria-hidden="true">☾</span><div><div class="brand-name">Moonlit Grove</div><div class="brand-subtitle">YOUR LITTLE CORNER OF MAGIC</div></div></div>
+    <button class="icon-button" id="settings-top" type="button" aria-label="Open settings" title="Settings"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.6 5.6 7 7m10 10 1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg></button>
+  </header>
+  <main id="main">
+    <div class="welcome-row"><div><p class="eyebrow">✦ &nbsp; WELCOME HOME &nbsp; ✦</p><h1>Your woodland haven</h1></div><span class="moon-mark" aria-hidden="true">☾</span></div>
+    <section class="scene-frame" aria-label="Your interactive Moonlit Grove clubhouse">
+      <div class="scene" id="scene" tabindex="0" role="group" aria-label="Woodland clubhouse. Choose a decoration below, then tap the scene to place it.">
+        <img class="scene-art" alt="Magical moonlit forest cottage with lanterns, purple mushrooms, and a winding stream" src="./assets/grove-scene.svg" draggable="false">
+        <div class="scene-mist scene-mist-one" aria-hidden="true"></div><div class="scene-mist scene-mist-two" aria-hidden="true"></div>
+        <div class="light-spark light-spark-a" aria-hidden="true"></div><div class="light-spark light-spark-b" aria-hidden="true"></div><div class="light-spark light-spark-c" aria-hidden="true"></div><div class="light-spark light-spark-d" aria-hidden="true"></div>
+        <div id="decor-layer" class="decor-layer" aria-label="Placed decorations"></div>
+        <div id="placement-hint" class="placement-hint" hidden>Tap anywhere in the grove to place your decoration</div>
+      </div>
+      <div class="scene-footer"><span class="footer-sigil" aria-hidden="true">✧</span><span id="save-state" class="save-state" role="status" aria-live="polite">Opening your grove…</span><span class="footer-sigil" aria-hidden="true">✧</span></div>
+    </section>
+    <div class="intro-section"><div><h2>Make this place yours</h2><p>Little details make a little world feel like home.</p></div><button class="primary-button" id="decorate-intro" type="button"><span aria-hidden="true">✦</span> Decorate</button></div>
+    <div class="detail-note" aria-label="Phase 1 local storage privacy"><span aria-hidden="true">✧</span> Just your space, saved on this device.</div>
+  </main>
+  <nav class="bottom-nav" aria-label="Main navigation"><button type="button" class="nav-item active" id="nav-home" aria-current="page"><span class="nav-icon">⌂</span><span>Home</span></button><button type="button" class="nav-item" id="nav-decorate"><span class="nav-icon">✿</span><span>Decorate</span></button><button type="button" class="nav-item" id="nav-settings"><span class="nav-icon">⚙</span><span>Settings</span></button></nav>
+</div>
+<div id="scrim" class="scrim" hidden></div>
+<section class="sheet" id="decor-sheet" role="dialog" aria-modal="true" aria-labelledby="decor-title" hidden>
+  <div class="sheet-grip"></div><div class="sheet-heading"><div><p class="eyebrow">✦ CURATE YOUR LITTLE WORLD</p><h2 id="decor-title">Decorate your grove</h2></div><button type="button" class="close-button" data-close aria-label="Close decoration menu">×</button></div>
+  <p class="sheet-help">Choose a treasure, then tap where it belongs in the woodland.</p>
+  <div id="decor-options" class="decor-options" role="group" aria-label="Available decorations"></div>
+  <div class="editor" id="editor" hidden><div class="editor-heading"><span id="selected-label">Selected decoration</span><button class="text-danger" id="remove-decor" type="button">Remove</button></div><div class="editor-actions"><span class="editor-info">Move a little:</span><button class="nudge" id="nudge-left" type="button" aria-label="Move decoration left">←</button><button class="nudge" id="nudge-up" type="button" aria-label="Move decoration up">↑</button><button class="nudge" id="nudge-down" type="button" aria-label="Move decoration down">↓</button><button class="nudge" id="nudge-right" type="button" aria-label="Move decoration right">→</button></div></div>
+  <p class="sheet-footnote">Tip: you can also drag a placed decoration to move it.</p>
+</section>
+<section class="sheet settings-sheet" id="settings-sheet" role="dialog" aria-modal="true" aria-labelledby="settings-title" hidden>
+  <div class="sheet-grip"></div><div class="sheet-heading"><div><p class="eyebrow">✧ MY LITTLE WORLD</p><h2 id="settings-title">Grove settings</h2></div><button type="button" class="close-button" data-close aria-label="Close settings">×</button></div>
+  <div class="setting-row"><div><strong>Gentle animations</strong><p>Fireflies and drifting mist</p></div><label class="toggle"><input id="motion-toggle" type="checkbox" aria-label="Gentle animations"><span></span></label></div>
+  <div class="setting-row"><div><strong>Keep a copy</strong><p>Save a backup file in case browser storage is cleared.</p></div><button type="button" id="export-backup" class="minor-button">Export</button></div>
+  <div class="setting-row"><div><strong>Restore your grove</strong><p>Import a Moonlit Grove backup from this device.</p></div><button type="button" id="import-backup" class="minor-button">Import</button><input type="file" id="import-file" accept=".json,application/json" hidden></div>
+  <div class="setting-row reset-row"><div><strong>Start fresh</strong><p>Reset decorations and settings after confirmation.</p></div><button type="button" id="reset" class="minor-button danger-outline">Reset</button></div>
+  <p class="privacy-note">Everything in this first version stays on this device. Safari and an installed Home Screen app may each have their own storage. A backup file is the safest way to move your decorations between them.</p>
+</section>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<dialog id="confirm-dialog" class="confirm-dialog"><form method="dialog"><div class="confirm-symbol">☾</div><h2>Start a new grove?</h2><p>This clears your saved decorations and settings on this device. Export a backup first if you want to keep them.</p><div class="dialog-buttons"><button value="cancel" class="minor-button">Keep my grove</button><button value="reset" class="primary-button danger-button">Reset my grove</button></div></form></dialog>
+</body>
+</html>
