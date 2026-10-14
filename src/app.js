@@ -20,7 +20,7 @@ function updateMotion(){document.documentElement.classList.toggle('motion-off',!
 function render(){
   layer.replaceChildren();
   for(const item of state.decor){
-    const btn=document.createElement('button');btn.type='button';btn.className='decor-object';
+    const btn=document.createElement('button');btn.type='button';btn.className=`decor-object decor-${item.type}`;
     btn.classList.toggle('selected',item.id===selectedId);
     btn.style.left=`${item.x}%`;btn.style.top=`${item.y}%`;
     btn.setAttribute('aria-label',`${getName(item.type)}. Tap to select, or drag to move.`);
