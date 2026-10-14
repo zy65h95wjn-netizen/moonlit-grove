@@ -12,8 +12,10 @@
   <link rel="icon" href="./assets/icon-192.png">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="./src/styles.css">
+  <link rel="stylesheet" href="./src/phase2.css">
   <title>Moonlit Grove — My Clubhouse</title>
   <script type="module" src="./src/app.js"></script>
+  <script type="module" src="./src/phase2.js"></script>
 </head>
 <body>
 <div class="ambient-haze" aria-hidden="true"></div>
@@ -37,7 +39,14 @@
     <div class="intro-section"><div><h2>Make this place yours</h2><p>Little details make a little world feel like home.</p></div><button class="primary-button" id="decorate-intro" type="button"><span aria-hidden="true">✦</span> Decorate</button></div>
     <div class="detail-note" aria-label="Phase 1 local storage privacy"><span aria-hidden="true">✧</span> Just your space, saved on this device.</div>
   </main>
-  <nav class="bottom-nav" aria-label="Main navigation"><button type="button" class="nav-item active" id="nav-home" aria-current="page"><span class="nav-icon">⌂</span><span>Home</span></button><button type="button" class="nav-item" id="nav-decorate"><span class="nav-icon">✿</span><span>Decorate</span></button><button type="button" class="nav-item" id="nav-settings"><span class="nav-icon">⚙</span><span>Settings</span></button></nav>
+  <section id="phase2-screen" hidden aria-label="Creative studios and daily magic"></section>
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <button type="button" class="nav-item active" id="nav-home" aria-current="page"><span class="nav-icon">⌂</span><span>Home</span></button>
+    <button type="button" class="nav-item" id="nav-studios"><span class="nav-icon">✿</span><span>Studios</span></button>
+    <button type="button" class="nav-item" id="nav-magic"><span class="nav-icon">✦</span><span>Magic</span></button>
+    <button type="button" class="nav-item" id="nav-decorate"><span class="nav-icon">❀</span><span>Decorate</span></button>
+    <button type="button" class="nav-item" id="nav-settings"><span class="nav-icon">⚙</span><span>Settings</span></button>
+  </nav>
 </div>
 <div id="scrim" class="scrim" hidden></div>
 <section class="sheet" id="decor-sheet" role="dialog" aria-modal="true" aria-labelledby="decor-title" hidden>

@@ -1,6 +1,6 @@
-# Moonlit Grove — Phase 1 working prototype
+# Moonlit Grove — Phase 1 clubhouse + Phase 2 solo features (candidate)
 
-A personalizable, local-only, cross-platform PWA. Implements **only Phase 1**, based on the approved October 14, 2026 blueprint. No accounts, chat, location, tracking, backend, paid services, or unapproved future-phase features.
+A personalizable, local-only, cross-platform PWA. Implements **Phases 1–2**, based on the approved October 14, 2026 blueprint. No accounts, chat, location, tracking, backend, paid services, or unapproved future-phase features.
 
 ## What works
 
@@ -19,7 +19,7 @@ Requires a local HTTP server for ES modules and service worker. From the `moonli
 python -m http.server 8000
 ```
 
-Open `http://localhost:8000/` on your computer. To install on iPhone/Android, publish the contents as a static HTTPS website to a *dedicated* GitHub repository; do not upload any private personal data. This Phase 1 candidate is staged for GitHub Pages testing and is not yet an accepted milestone.
+Open `http://localhost:8000/` on your computer. To install on iPhone/Android, publish the contents as a static HTTPS website to a *dedicated* GitHub repository; do not upload any private personal data. This prototype has intentionally **not** been published to GitHub.
 
 ## iPhone-specific testing
 
@@ -44,4 +44,10 @@ Content saved locally on-device is *not* encrypted by the app or backed up autom
 
 ## Rollback and delivery
 
-The initial repository commit remains the rollback baseline. The ZIP of the Phase 1 candidate is also a backup. On acceptance, create a separate `moonlit-grove` repository, release from an accepted commit/tag and preserve a known-good baseline. The service-worker cache version must be advanced when changing cached assets; replacing files without bumping it can leave users on old code.
+No GitHub changes yet. The ZIP of this folder is the Phase 1 candidate snapshot. On acceptance, create a separate `moonlit-grove` repository, release from an accepted commit/tag and preserve a known-good baseline. The service-worker cache version must be advanced when changing cached assets; replacing files without bumping it can leave users on old code.
+
+## Phase 2 (functional-first candidate)
+
+Added Studio tabs for crochet, recipes, beauty boards and volleyball/softball practice; local add/edit/mark complete/delete; daily magic, two solo games and collectible moonseed rewards. Phase 2 stores data under a distinct IndexedDB key and never migrates or writes the Phase 1 clubhouse record. Studios & Magic export/import is separate from the clubhouse backup.
+
+See `PHASE2_STATUS.md` for acceptance tests. Not yet fully verified on real iPhone/Android.
