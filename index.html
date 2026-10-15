@@ -13,9 +13,11 @@
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="./src/styles.css">
   <link rel="stylesheet" href="./src/phase2.css">
+  <link rel="stylesheet" href="./src/account.css">
   <title>Moonlit Grove — My Clubhouse</title>
   <script type="module" src="./src/app.js"></script>
   <script type="module" src="./src/phase2.js"></script>
+  <script type="module" src="./src/account-ui.js"></script>
 </head>
 <body>
 <div class="ambient-haze" aria-hidden="true"></div>
@@ -40,12 +42,14 @@
     <div class="detail-note" aria-label="Phase 1 local storage privacy"><span aria-hidden="true">✧</span> Just your space, saved on this device.</div>
   </main>
   <section id="phase2-screen" hidden aria-label="Creative studios and daily magic"></section>
+  <section id="account-screen" hidden aria-label="Private friends"></section>
   <nav class="bottom-nav" aria-label="Main navigation">
     <button type="button" class="nav-item active" id="nav-home" aria-current="page"><span class="nav-icon">⌂</span><span>Home</span></button>
     <button type="button" class="nav-item" id="nav-studios"><span class="nav-icon">✿</span><span>Studios</span></button>
     <button type="button" class="nav-item" id="nav-magic"><span class="nav-icon">✦</span><span>Magic</span></button>
     <button type="button" class="nav-item" id="nav-decorate"><span class="nav-icon">❀</span><span>Decorate</span></button>
     <button type="button" class="nav-item" id="nav-settings"><span class="nav-icon">⚙</span><span>Settings</span></button>
+    <button type="button" class="nav-item" id="nav-account"><span class="nav-icon" aria-hidden="true">♧</span><span>Friends</span></button>
   </nav>
 </div>
 <div id="scrim" class="scrim" hidden></div>

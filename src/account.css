@@ -1,0 +1,19 @@
+/* Phase 3: keep the existing Moonlit Grove shell/typography; functionality first. */
+#account-screen { padding:10px 2px 40px; }
+.account-heading h1 { font:normal 28px/1.2 Georgia,serif; color:var(--cream);margin:8px 0; }
+.account-heading p { color:var(--muted);line-height:1.5; }
+.account-box { background:#2c253ecc;border:1px solid #baa0c066;border-radius:18px;padding:18px;margin:16px 0; }
+.account-box h2 {font:normal 23px/1.2 Georgia,serif;margin:0 0 10px;color:#f4dfc8;}
+.account-box p {font-size:13px;line-height:1.55;color:#d5c6dd;}
+.account-box label {display:flex;flex-direction:column;gap:6px;margin:13px 0;font-size:13px;color:#f0e6f1;}
+.account-box input:not([type="checkbox"]) {width:100%;border-radius:11px;min-height:44px;background:#191b33;color:#f8f1e4;border:1px solid #a793bc;padding:10px;font-size:15px;}
+.account-box .age-agreement {flex-direction:row;align-items:center;gap:10px;}
+.account-box .age-agreement input {width:20px;height:20px;flex:none;}
+.friend-list {list-style:none;padding:0;margin:8px 0;color:#e9dfe9;font-size:13px;}
+.friend-row {border-bottom:1px solid #f1dafa2e;padding:12px 0;display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:10px;}
+.friend-actions {display:flex;gap:6px;flex-wrap:wrap;}
+.friend-actions button,.friend-row button {border:1px solid #b49abf;background:#443953;color:#f1e5f3;border-radius:9px;min-height:36px;padding:6px 9px;}
+#account-status {font-size:13px;color:#d4f1d0;min-height:18px;}
+#account-status.error {color:#ffd0c7;}
+#account-signed-out {text-align:center;padding:15px 5px;color:var(--muted);}
+#account-signed-out p {font-size:12px;}

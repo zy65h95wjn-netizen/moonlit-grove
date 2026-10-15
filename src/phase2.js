@@ -119,7 +119,7 @@ function playWord(event){event.preventDefault();if(!healthy)return;const key=`${
   if(answer!==words[dayNumber()%words.length][0]){$('word-status').textContent='Not quite. Try again!';return;}
   award(key);$('word-answer').value='';gameFeedback='complete';renderMagic();$('word-status').textContent='Well done! +1 moonseed';
 }
-function navigate(screen){const home=$('main'),p2=$('phase2-screen');const isHome=screen==='home';home.hidden=!isHome;p2.hidden=isHome;
+function navigate(screen){$('account-screen').hidden=true;const home=$('main'),p2=$('phase2-screen');const isHome=screen==='home';home.hidden=!isHome;p2.hidden=isHome;
   for(const name of ['home','studios','magic']){const node=$(`nav-${name}`);node.classList.toggle('active',screen===name);if(screen===name)node.setAttribute('aria-current','page');else node.removeAttribute('aria-current');}
   if(!isHome){$('phase2-studios').hidden=screen!=='studios';$('phase2-magic').hidden=screen!=='magic';if(screen==='studios')renderStudio();else renderMagic();}
   window.scrollTo({top:0,behavior:'instant'});
